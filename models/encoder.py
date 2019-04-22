@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 import torchvision
 
-
+print('aaa')
 class Encoder(nn.Module):
     """
     Encoder.
