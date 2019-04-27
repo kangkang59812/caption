@@ -4,8 +4,8 @@
 # datetime:2019/4/27 14:43
 # -----------------------------
 import json
-
-path = '../../datasets/coco2017/annotations/'
+import re
+path = '../../../datasets/coco2017/annotations/'
 
 val = json.load(open(path+'captions_val2017.json', 'r'))
 train = json.load(open(path+'captions_train2017.json', 'r'))
@@ -26,7 +26,7 @@ for i,img in enumerate(imgs):
     item = {}
     item["filepath"]= "train2017" if 'train' in img['coco_url'] else "val2017"
     item["sentids"] = [s_id['id'] for s_id in itoa[img['id']]]
-    item["filename"] = "COCO_" + item["filepath"] + "_" + img["file_name"]
+    item["filename"] = img["file_name"]
     item["imgid"] = i
     item["split"] = item["filepath"][:-4]
     item["sentences"] = []
@@ -37,7 +37,7 @@ for i,img in enumerate(imgs):
         s_item["imgid"]=item["imgid"]
         s_item["sentid"]=cap["id"]
         item["sentences"].append(s_item)
-    item["cocoid"]=img["file_name"][-10:-4]
+    item["cocoid"]=img["file_name"][:-4].lstrip('0')
     out.append(item)
 result={"images":out}
 result.update(dataset)
