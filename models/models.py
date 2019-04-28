@@ -199,6 +199,7 @@ class DecoderWithAttention(nn.Module):
         num_pixels = encoder_out.size(1)
 
         # Sort input data by decreasing lengths; why? apparent below
+        # 为了torch中的pack_padded_sequence，需要降序排列
         caption_lengths, sort_ind = caption_lengths.squeeze(1).sort(dim=0, descending=True)
         encoder_out = encoder_out[sort_ind]
         # [32, 52]
@@ -232,14 +233,8 @@ class DecoderWithAttention(nn.Module):
             h, c = self.decode_step(torch.cat([embeddings[:batch_size_t, t, :], attention_weighted_encoding], dim=1),(h[:batch_size_t], c[:batch_size_t]))  # (batch_size_t, decoder_dim)
 
             preds = self.fc(self.dropout(h))  # (batch_size_t, vocab_size)
-            #print('aaaaaaa', preds.shape)
+
             predictions[:batch_size_t, t, :] = preds
             alphas[:batch_size_t, t, :] = alpha
 
         return predictions, encoded_captions, decode_lengths, alphas, sort_ind
-
-encoder = Encoder().to(device)
-d = torch.randn(1, 3, 512, 512).cuda()
-out = encoder(d)
-print(out.shape)
-summary(encoder,(3,512,512))

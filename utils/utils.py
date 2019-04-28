@@ -117,6 +117,7 @@ def create_input_files(dataset, karpathy_json_path, image_folder, captions_per_i
                 assert len(captions) == captions_per_image
 
                 # Read images H,W,C ,灰度扩充到3维，每维一样
+                # 可修改为其他的读取方式
                 img = imread(impaths[i])
                 if len(img.shape) == 2:
                     img = img[:, :, np.newaxis]
