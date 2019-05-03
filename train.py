@@ -16,6 +16,7 @@ from data.datasets import *
 from utils.utils import *
 from nltk.translate.bleu_score import corpus_bleu
 from torchsummary import summary
+
 # Data parameters
 data_folder = '../../datasets/coco2014/'  # folder with data files saved by create_input_files.py
 data_name = 'coco_5_cap_per_img_5_min_word_freq'  # base name shared by data files
@@ -30,7 +31,7 @@ cudnn.benchmark = True  # set to true only if inputs to model are fixed size; ot
 
 # Training parameters
 start_epoch = 0
-epochs = 10  # number of epochs to train for (if early stopping is not triggered)
+epochs = 20  # number of epochs to train for (if early stopping is not triggered)
 epochs_since_improvement = 0  # keeps track of number of epochs since there's been an improvement in validation BLEU
 batch_size = 32
 workers = 1  # for data-loading; right now, only 1 works with h5py
@@ -41,8 +42,9 @@ alpha_c = 1.  # regularization parameter for 'doubly stochastic attention', as i
 best_bleu4 = 0.  # BLEU-4 score right now
 print_freq = 100  # print training/validation stats every __ batches
 fine_tune_encoder = False  # fine-tune encoder?
-#checkpoint = './checkpoint_coco_5_cap_per_img_5_min_word_freq.pth.tar'  # path to checkpoint, None if none
-checkpoint = None
+# checkpoint = './checkpoint_coco_5_cap_per_img_5_min_word_freq.pth.tar'  # path to checkpoint, None if none
+checkpoint = './checkpoint_coco_5_cap_per_img_5_min_word_freq.pth.tar'
+
 
 def main():
     """
@@ -68,13 +70,29 @@ def main():
                                              lr=encoder_lr) if fine_tune_encoder else None
 
     else:
-        pass
+        checkpoint = torch.load(checkpoint)
+        start_epoch = checkpoint['epoch'] + 1
+        epochs_since_improvement = checkpoint['epochs_since_improvement']
+        best_bleu4 = checkpoint['bleu-4']
+        decoder = checkpoint['decoder']
+        decoder_optimizer = checkpoint['decoder_optimizer']
+        encoder = checkpoint['encoder']
+        encoder_optimizer = checkpoint['encoder_optimizer']
+        if fine_tune_encoder is True and encoder_optimizer is None:
+            encoder.fine_tune(fine_tune_encoder)
+            encoder_optimizer = torch.optim.Adam(params=filter(lambda p: p.requires_grad, encoder.parameters()),
+                                                 lr=encoder_lr)
 
     # Move to GPU, if available
+    # if torch.cuda.device_count() > 1:
+    #
+    #     decoder = nn.DataParallel(decoder,device_ids=[0,1])
+    #     encoder = nn.DataParallel(encoder,device_ids=[0,1])
+
     decoder = decoder.to(device)
     encoder = encoder.to(device)
 
-    #summary(encoder,(3,256,256))
+    # summary(encoder,(3,256,256))
 
     # Loss function
     criterion = nn.CrossEntropyLoss().to(device)
@@ -100,13 +118,13 @@ def main():
                 adjust_learning_rate(encoder_optimizer, 0.8)
 
         # One epoch's training
-        # train(train_loader=train_loader,
-        #       encoder=encoder,
-        #       decoder=decoder,
-        #       criterion=criterion,
-        #       encoder_optimizer=encoder_optimizer,
-        #       decoder_optimizer=decoder_optimizer,
-        #       epoch=epoch)
+        train(train_loader=train_loader,
+              encoder=encoder,
+              decoder=decoder,
+              criterion=criterion,
+              encoder_optimizer=encoder_optimizer,
+              decoder_optimizer=decoder_optimizer,
+              epoch=epoch)
 
         # One epoch's validation
         recent_bleu4 = validate(val_loader=val_loader,
@@ -281,7 +299,8 @@ def validate(val_loader, encoder, decoder, criterion):
                 print('Validation: [{0}/{1}]\t'
                       'Batch Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
                       'Loss {loss.val:.4f} ({loss.avg:.4f})\t'
-                      'Top-5 Accuracy {top5.val:.3f} ({top5.avg:.3f})\t'.format(i, len(val_loader), batch_time=batch_time,
+                      'Top-5 Accuracy {top5.val:.3f} ({top5.avg:.3f})\t'.format(i, len(val_loader),
+                                                                                batch_time=batch_time,
                                                                                 loss=losses, top5=top5accs))
 
             # Store references (true captions), and hypothesis (prediction) for each image
@@ -312,11 +331,13 @@ def validate(val_loader, encoder, decoder, criterion):
         bleu4 = corpus_bleu(references, hypotheses)
 
         print(
-        '\n * LOSS - {loss.avg:.3f}, TOP-5 ACCURACY - {top5.avg:.3f}, BLEU-4 - {bleu}\n'.format(
-            loss=losses,
-            top5=top5accs,
-            bleu=bleu4))
+            '\n * LOSS - {loss.avg:.3f}, TOP-5 ACCURACY - {top5.avg:.3f}, BLEU-4 - {bleu}\n'.format(
+                loss=losses,
+                top5=top5accs,
+                bleu=bleu4))
 
     return bleu4
+
+
 if __name__ == '__main__':
     main()

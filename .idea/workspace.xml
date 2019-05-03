@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27c42482-24d3-4570-9e72-8e58480ec39c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/datasets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eval.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/create_input_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/create_input_files.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +14,9 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/caption_v1$create_input_files.coverage" NAME="create_input_files Coverage Results" MODIFIED="1556416701154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
-    <SUITE FILE_PATH="coverage/caption_v1$train.coverage" NAME="train Coverage Results" MODIFIED="1556451005527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/caption_v1$train.coverage" NAME="train Coverage Results" MODIFIED="1556785807535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/caption_v1$base.coverage" NAME="encoder Coverage Results" MODIFIED="1555909517524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/caption_v1$eval.coverage" NAME="eval Coverage Results" MODIFIED="1556861634166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/caption_v1$prepare.coverage" NAME="prepare Coverage Results" MODIFIED="1555903766247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/caption_v1$encoder.coverage" NAME="encoder Coverage Results" MODIFIED="1556086241717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/caption_v1$coco_preprocess.coverage" NAME="coco_preprocess Coverage Results" MODIFIED="1556365051821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
@@ -41,39 +39,39 @@
     <session id="451283305">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="ipynb" value="1" />
           <entry key="md" value="1" />
-          <entry key="py" value="37" />
+          <entry key="py" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IPNB" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="37" />
+          <entry key="Python" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="13" />
-          <entry key="py" value="780" />
+          <entry key="py" value="912" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Python" value="780" />
+          <entry key="Python" value="912" />
         </counts>
       </usages-collector>
     </session>
@@ -83,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2385">
-              <caret line="225" column="63" lean-forward="true" selection-start-line="225" selection-start-column="63" selection-end-line="225" selection-end-column="63" />
+            <state relative-caret-position="133">
+              <caret line="216" lean-forward="true" selection-start-line="216" selection-end-line="216" />
               <folding>
                 <element signature="e#133#145#0" expanded="true" />
               </folding>
@@ -93,19 +91,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/create_input_files.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="12" column="86" selection-start-line="12" selection-start-column="86" selection-end-line="12" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6935">
-              <caret line="289" selection-start-line="289" selection-end-line="289" />
+            <state relative-caret-position="5112">
+              <caret line="213" column="4" selection-start-line="213" selection-start-column="4" selection-end-line="213" selection-end-column="4" />
               <folding>
                 <element signature="e#133#142#0" expanded="true" />
               </folding>
@@ -116,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/coco_preprocess.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+            <state relative-caret-position="504">
+              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
               <folding>
                 <element signature="e#132#143#0" expanded="true" />
               </folding>
@@ -128,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/datasets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="55" column="46" lean-forward="true" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
+            <state relative-caret-position="1224">
+              <caret line="55" column="46" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
               <folding>
                 <element signature="e#133#145#0" expanded="true" />
               </folding>
@@ -140,8 +129,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="21" />
+            <state relative-caret-position="232">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="e#133#144#0" expanded="true" />
               </folding>
@@ -150,26 +139,47 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-1129845102/172807054/torchsummary/torchsummary.py">
+        <entry file="file://$PROJECT_DIR$/eval.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="1747">
+              <caret line="188" lean-forward="true" selection-start-line="188" selection-end-line="188" />
+              <folding>
+                <element signature="e#131#167#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;3ddbb126-b080-44f6-91b1-a74ad247af95&gt;/code/caption_v1/train.py">
+        <entry file="remoteDeploymentFS://&lt;3ddbb126-b080-44f6-91b1-a74ad247af95&gt;/code/caption_v1/eval.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-548" />
+            <state relative-caret-position="-4196" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-1129845102/172807054/nltk/translate/bleu_score.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="109" column="4" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-1129845102/172807054/torchsummary/torchsummary.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1296">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-1129845102/172807054/torch/nn/functional.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="1465" lean-forward="true" selection-start-line="1465" selection-end-line="1465" />
+            <state relative-caret-position="34776">
+              <caret line="1465" selection-start-line="1465" selection-end-line="1465" />
             </state>
           </provider>
         </entry>
@@ -204,6 +214,8 @@
         <option value="$PROJECT_DIR$/data/create_input_files.py" />
         <option value="$PROJECT_DIR$/data/datasets.py" />
         <option value="$PROJECT_DIR$/models/models.py" />
+        <option value="&lt;3ddbb126-b080-44f6-91b1-a74ad247af95&gt;/code/caption_v1/eval.py" />
+        <option value="$PROJECT_DIR$/eval.py" />
         <option value="$PROJECT_DIR$/train.py" />
       </list>
     </option>
@@ -214,11 +226,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
-    <option name="y" value="-394" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="200" />
+    <option name="y" value="23" />
     <option name="width" value="1080" />
-    <option name="height" value="1404" />
+    <option name="height" value="715" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -232,6 +244,11 @@
             <path>
               <item name="caption_v1" type="b2602c69:ProjectViewProjectNode" />
               <item name="caption_v1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="caption_v1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="caption_v1" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="caption_v1" type="b2602c69:ProjectViewProjectNode" />
@@ -268,7 +285,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.train">
+  <component name="RunManager" selected="Python.eval">
     <configuration name="coco_preprocess" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="caption_v1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -356,6 +373,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="eval" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="caption_v1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <PathMappingSettings>
+        <option name="pathMappings">
+          <list>
+            <mapping local-root="$PROJECT_DIR$" remote-root="/home/lkk/code/caption_v1" />
+          </list>
+        </option>
+      </PathMappingSettings>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/eval.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="prepare" type="PythonConfigurationType" factoryName="Python">
       <module name="caption_v1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -420,9 +466,11 @@
       <item itemvalue="Python.create_input_files" />
       <item itemvalue="Python.coco_preprocess" />
       <item itemvalue="Python.train" />
+      <item itemvalue="Python.eval" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.eval" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.create_input_files" />
         <item itemvalue="Python.coco_preprocess" />
@@ -453,33 +501,58 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="-394" width="1080" height="1404" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="715" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17919075" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11308562" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30516082" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20385233" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5121951" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32994923" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="File Transfer" order="9" weight="0.3275991" />
+      <window_info anchor="bottom" id="File Transfer" order="9" weight="0.16372392" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49807322" visible="true" weight="0.34070122" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49807322" weight="0.2953451" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5019268" side_tool="true" weight="0.44585449" />
-      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32984293" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32976827" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" weight="0.37090558" />
+      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.105815835" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="right" id="Database" order="5" weight="0.2620424" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.124394186" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23595506" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5121951" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32994923" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="File Transfer" order="9" weight="0.16372392" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49807322" weight="0.2953451" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5019268" side_tool="true" weight="0.44585449" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32976827" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" anchor="right" id="Remote Host" order="3" visible="true" weight="0.105815835" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.2620424" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -583,30 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-1129845102/172807054/torchsummary/torchsummary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-1129845102/172807054/torch/nn/functional.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="1465" lean-forward="true" selection-start-line="1465" selection-end-line="1465" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/coco_preprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-          <folding>
-            <element signature="e#132#143#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/create_input_files.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -614,10 +663,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/coco_preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding>
+            <element signature="e#132#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/datasets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="55" column="46" lean-forward="true" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
+        <state relative-caret-position="1224">
+          <caret line="55" column="46" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
+          <folding>
+            <element signature="e#133#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-1129845102/172807054/torchsummary/torchsummary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-1129845102/172807054/torch/nn/functional.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34776">
+          <caret line="1465" selection-start-line="1465" selection-end-line="1465" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-1129845102/172807054/nltk/translate/bleu_score.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="109" column="4" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1747">
+          <caret line="188" lean-forward="true" selection-start-line="188" selection-end-line="188" />
+          <folding>
+            <element signature="e#131#167#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="216" lean-forward="true" selection-start-line="216" selection-end-line="216" />
           <folding>
             <element signature="e#133#145#0" expanded="true" />
           </folding>
@@ -626,28 +726,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6935">
-          <caret line="289" selection-start-line="289" selection-end-line="289" />
+        <state relative-caret-position="5112">
+          <caret line="213" column="4" selection-start-line="213" selection-start-column="4" selection-end-line="213" selection-end-column="4" />
           <folding>
             <element signature="e#133#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2385">
-          <caret line="225" column="63" lean-forward="true" selection-start-line="225" selection-start-column="63" selection-end-line="225" selection-end-column="63" />
-          <folding>
-            <element signature="e#133#145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="21" />
+        <state relative-caret-position="232">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
           <folding>
             <element signature="e#133#144#0" expanded="true" />
           </folding>
